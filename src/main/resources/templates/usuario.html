@@ -14,65 +14,61 @@
 <body>
 <div th:replace="preloader"></div>
 
-    <div id="main-wrapper">
+<div id="main-wrapper">
 
-        <div th:replace="nav-header"></div>
+    <div th:replace="/fragments/nav-header"></div>
 
-        <div th:replace="header"></div>
+    <div th:replace="/fragments/header"></div>
 
-        <div th:replace="menu"></div>
+    <div th:replace="/fragments/menu"></div>
 
-        <div class="content-body">
+    <div class="content-body">
 
-            <div class="row page-titles mx-0">
-                <div class="col p-md-0">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Home</a></li>
-                    </ol>
-                </div>
-            </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">id</th>
+                                        <th scope="col">Nome</th>
+                                        <th scope="col">Idade</th>
+                                        <th scope="col">Casado</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr th:each="usuario : ${usuarios}">
+                                        <th scope="row" th:text="${usuario.id}"></th>
+                                            <td>
+                                                <a th:href="@{'/usuarios/' + ${usuario.id}}" th:text="${usuario.nome}"></a>
 
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                        <tr>
-                                            <th scope="col">id</th>
-                                            <th scope="col">Nome</th>
-                                            <th scope="col">Idade</th>
-                                            <th scope="col">Casado</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr th:each="usuario : ${usuarios}">
-                                            <th scope="row" th:text="${usuario.id}"></th>
-                                            <td th:text="${usuario.nome}"></td>
-                                            <td th:text="${usuario.idade}"></td>
-                                            <td th:text="${usuario.casado}"></td>
-                                        </tr>
-                                        </tbody>
-                                    </table>                                </div>
+                                            </td>
+
+                                        <td th:text="${usuario.idade}"></td>
+                                        <td th:text="${usuario.casado}"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div th:replace="footer"></div>
-
     </div>
 
-    <script src="plugins/common/common.min.js"></script>
-    <script src="js/custom.min.js"></script>
-    <script src="js/settings.js"></script>
-    <script src="js/gleek.js"></script>
-    <script src="js/styleSwitcher.js"></script>
+    <div th:replace="/fragments/footer"></div>
+
+</div>
+
+<script src="plugins/common/common.min.js"></script>
+<script src="js/custom.min.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/gleek.js"></script>
+<script src="js/styleSwitcher.js"></script>
 
 </body>
 
