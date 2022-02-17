@@ -25,6 +25,7 @@ public class UsuarioController {
         ModelAndView modelAndView = new ModelAndView("usuario");
 
         List<Usuario> usuarios =usuarioRepository.findAll();
+
         modelAndView.addObject("usuarios", usuarios);
         return modelAndView;
 
@@ -33,7 +34,7 @@ public class UsuarioController {
     @GetMapping("/{id}")
     public ModelAndView detalharUsuario(@PathVariable Long id){
 
-        Optional<Usuario> usuario = usuarioRepository.findById(id);
+        Usuario usuario = usuarioRepository.findUsuarioById(id);
 
         ModelAndView modelAndView  = new ModelAndView("usuario-detalhe");
 

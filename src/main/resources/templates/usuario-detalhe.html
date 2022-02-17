@@ -1,10 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Quixlab - Bootstrap Admin Dashboard Template by Themefisher.com</title>
+    <link rel="icon" type="image/png" sizes="16x16" th:href="@{images/favicon.png}">
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+
 </head>
+
 <body>
+<div th:replace="preloader"></div>
+
+<div id="main-wrapper">
+
+    <div th:replace="/fragments/nav-header"></div>
+
+    <div th:replace="/fragments/header"></div>
+
+    <div th:replace="/fragments/menu"></div>
+
+    <div class="content-body">
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <input type="text"
+                                       class="form-control input-rounded"
+                                       placeholder="Input Rounded"
+                                       th:value="${usuario.nome}">
+                                <input type="text"
+                                       class="form-control input-rounded"
+                                       placeholder="Input Rounded"
+                                       th:value="${usuario.idade}">
+                                <input type="text"
+                                       class="form-control input-rounded"
+                                       placeholder="Input Rounded"
+                                       th:value="${usuario.casado}">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="/fragments/footer"></div>
+
+</div>
+
+<script th:src="@{/plugins/common/common.min.js}"></script>
+<script th:src="@{/js/custom.min.js}"></script>
+<script th:src="@{/js/settings.js}"></script>
+<script th:src="@{/js/gleek.js}"></script>
+<script th:src="@{/js/styleSwitcher.js}"></script>
 
 </body>
+
 </html>
