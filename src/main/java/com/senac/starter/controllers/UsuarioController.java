@@ -42,4 +42,12 @@ public class UsuarioController {
 
         return modelAndView;
     }
+
+    @GetMapping("/deletar/{id}")
+    public String deletar(@PathVariable Long id){
+        Usuario usuario = usuarioRepository.findUsuarioById(id);
+        usuarioRepository.delete(usuario);
+
+        return "redirect:/usuarios";
+    }
 }
