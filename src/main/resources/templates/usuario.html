@@ -40,10 +40,13 @@
                                             </h3>
                                         </div>
                                         <div class="right">
-                                            <button type="button" class="btn mb-1 btn-rounded btn-info btn-lg">
-                                                <i class="icon-plus" style="margin-top:10px"></i>
-                                                Novo Usuário
-                                            </button>
+                                            <a href="/usuarios/add">
+                                                <button type="button"  class="btn mb-1 btn-rounded btn-info btn-lg">
+                                                    <i class="icon-plus" style="margin-top:10px"></i>
+                                                    Novo Usuário
+                                                </button>
+                                            </a>
+
 
                                         </div>
                                     </div>
@@ -57,18 +60,25 @@
                                         <th scope="col">Nome</th>
                                         <th scope="col">Idade</th>
                                         <th scope="col">Casado</th>
+                                        <th scope="col">Deletar</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <tr th:each="usuario : ${usuarios}">
                                         <th scope="row" th:text="${usuario.id}"></th>
-                                            <td>
-                                                <a th:href="@{'/usuarios/' + ${usuario.id}}" th:text="${usuario.nome}"></a>
+                                        <td>
+                                            <a th:href="@{'/usuarios/' + ${usuario.id}}" th:text="${usuario.nome}"></a>
 
-                                            </td>
+                                        </td>
 
                                         <td th:text="${usuario.idade}"></td>
                                         <td th:text="${usuario.casado}"></td>
+                                        <td>
+                                            <a th:href="@{'/usuarios/deletar/' + ${usuario.id}}">
+                                                <i class="icon-trash" ></i>
+                                            </a>
+
+                                        </td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -76,6 +86,29 @@
                         </div>
                     </div>
 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bootstrap-modal">
+        <!-- Button trigger modal -->
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
                 </div>
             </div>
         </div>

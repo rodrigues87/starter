@@ -6,9 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Quixlab - Bootstrap Admin Dashboard Template by Themefisher.com</title>
-    <link rel="icon" type="image/png" sizes="16x16" th:href="@{images/favicon.png}">
-    <link th:href="@{/css/style.css}" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <!-- Custom Stylesheet -->
+    <link th:href="@{/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css}" rel="stylesheet">
+    <!-- Page plugins css -->
+    <link th:href="@{/plugins/clockpicker/dist/jquery-clockpicker.min.css}" rel="stylesheet">
+    <!-- Color picker plugins css -->
+    <link th:href="@{/plugins/jquery-asColorPicker-master/css/asColorPicker.css}" rel="stylesheet">
+    <!-- Date picker plugins css -->
+    <link th:href="@{/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css}" rel="stylesheet">
+    <!-- Daterange picker plugins css -->
+    <link th:href="@{/plugins/timepicker/bootstrap-timepicker.min.css}" rel="stylesheet">
+    <link th:href="@{/plugins/bootstrap-daterangepicker/daterangepicker.css}" rel="stylesheet">
 
+    <link th:href="@{/css/style.css}" rel="stylesheet">
 </head>
 
 <body>
@@ -29,20 +40,80 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <div class="form-group">
-                                <input type="text"
-                                       class="form-control input-rounded"
-                                       placeholder="Input Rounded"
-                                       th:value="${usuario.nome}">
-                                <input type="text"
-                                       class="form-control input-rounded"
-                                       placeholder="Input Rounded"
-                                       th:value="${usuario.idade}">
-                                <input type="text"
-                                       class="form-control input-rounded"
-                                       placeholder="Input Rounded"
-                                       th:value="${usuario.casado}">
+                            <div class="basic-form">
+                                <form method="post" th:action="@{/usuarios}" th:object="${usuario}">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-4">
+                                            <label>Email</label>
+                                            <input type="email" class="form-control readonly" placeholder="">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label>Nome</label>
+                                            <input type="text"
+                                                   class="form-control"
+                                                   placeholder=""
+                                                   th:value="${usuario.nome}"
+                                                   th:field="*{nome}">
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            <label>Telefone</label>
+                                            <input type="text" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="row form-material">
 
+                                        <div class="form-group col-md-3">
+                                            <label>Telefone Secundário</label>
+                                            <input type="text" class="form-control" placeholder="">
+                                        </div>
+
+                                        <div class="form-group col-md-5">
+                                            <label>Estado Civil</label>
+                                            <select id="estadoCivil"  class="form-control">
+                                                <option selected="selected">Escolha</option>
+                                                <option>Casado</option>
+                                                <option>Solteiro</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group col-md-4">
+                                            <label>Data de Nascimento</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control mydatepicker" placeholder="mm/dd/yyyy"> <span class="input-group-append"><span class="input-group-text"><i class="mdi mdi-calendar-check"></i></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="form-group col-md-2">
+                                            <label>Cep</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group col-md-8">
+                                            <label>Rua</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            <label>Número</label>
+                                            <input type="number" class="form-control">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label>Cidade</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label>Estado</label>
+                                            <select id="inputState" class="form-control">
+                                                <option selected="selected">Escolha</option>
+                                                <option>Espirito Santo</option>
+                                                <option>Rio de Janeiro</option>
+                                            </select>
+
+                                        </div>
+
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Salvar</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -60,6 +131,22 @@
 <script th:src="@{/js/settings.js}"></script>
 <script th:src="@{/js/gleek.js}"></script>
 <script th:src="@{/js/styleSwitcher.js}"></script>
+
+<script th:src="@{/plugins/moment/moment.js}"></script>
+<script th:src="@{/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js}"></script>
+<!-- Clock Plugin JavaScript -->
+<script th:src="@{/plugins/clockpicker/dist/jquery-clockpicker.min.js}"></script>
+<!-- Color Picker Plugin JavaScript -->
+<script th:src="@{/plugins/jquery-asColorPicker-master/libs/jquery-asColor.js}"></script>
+<script th:src="@{/plugins/jquery-asColorPicker-master/libs/jquery-asGradient.js}"></script>
+<script th:src="@{/plugins/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js}"></script>
+<!-- Date Picker Plugin JavaScript -->
+<script th:src="@{/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js}"></script>
+<!-- Date range Plugin JavaScript -->
+<script th:src="@{/plugins/timepicker/bootstrap-timepicker.min.js}"></script>
+<script th:src="@{/plugins/bootstrap-daterangepicker/daterangepicker.js}"></script>
+
+<script th:src="@{/js/plugins-init/form-pickers-init.js}"></script>
 
 </body>
 
