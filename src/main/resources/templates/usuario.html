@@ -29,6 +29,26 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
+                            <div class="card card-widget">
+                                <div class="card-body gradient-3">
+                                    <div class="media">
+                                        <span class="card-widget__icon"><i class="icon-emotsmile"></i></span>
+                                        <div class="media-body">
+                                            <h3 class="text-white">
+                                                <span th:text="${#lists.size(usuarios)}"/>
+                                                Usuários Cadastrados
+                                            </h3>
+                                        </div>
+                                        <div class="right">
+                                            <button type="button" class="btn mb-1 btn-rounded btn-info btn-lg">
+                                                <i class="icon-plus" style="margin-top:10px"></i>
+                                                Novo Usuário
+                                            </button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
@@ -55,6 +75,7 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

@@ -16,7 +16,13 @@ import java.time.format.DateTimeFormatter;
 @RequestMapping("/")
 public class SiteController {
 
-    @GetMapping("/")
+    @GetMapping()
+    public ModelAndView dashBoard(){
+
+        return new ModelAndView("dashboard");
+    }
+
+    @GetMapping("/aviso")
     public ModelAndView home(){
         ModelAndView modelAndView = new ModelAndView("home");
         Usuario usuario = new Usuario("paulo",60,true);
