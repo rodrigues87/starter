@@ -49,7 +49,11 @@
                                                th:value="${usuario.id}">
                                         <div class="form-group col-md-4">
                                             <label>Email</label>
-                                            <input type="email" class="form-control readonly" placeholder="">
+                                            <input type="email"
+                                                   class="form-control readonly"
+                                                   placeholder=""
+                                                   th:value="${usuario.email}"
+                                                   th:field="*{email}">
                                         </div>
 
                                         <div class="form-group col-md-6">
@@ -117,10 +121,6 @@
                                         </div>
 
                                     </div>
-                                    <a href="/usuarios">
-                                        <button class="btn btn-primary">Voltar</button>
-                                    </a>
-
                                     <button type="submit" class="btn btn-primary">Salvar</button>
                                 </form>
                             </div>

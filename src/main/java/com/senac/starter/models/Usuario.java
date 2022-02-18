@@ -21,6 +21,7 @@ public class Usuario implements Serializable {
     private String nome;
     private int idade;
     private boolean casado;
+    private String email;
 
     public Usuario(String nome, int idade, boolean casado) {
         this.nome = nome;
