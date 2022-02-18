@@ -19,10 +19,9 @@ public class UsuarioController {
 
     @GetMapping("")
     public ModelAndView listar(){
+
         ModelAndView modelAndView = new ModelAndView("usuario");
-
         List<Usuario> usuarios =usuarioRepository.findAll();
-
         modelAndView.addObject("usuarios", usuarios);
         return modelAndView;
 
@@ -32,16 +31,14 @@ public class UsuarioController {
     public ModelAndView detalharUsuario(@PathVariable Long id){
 
         Usuario usuario = usuarioRepository.findUsuarioById(id);
-
         ModelAndView modelAndView  = new ModelAndView("usuario-detalhe");
-
         modelAndView.addObject("usuario",usuario);
-
         return modelAndView;
     }
 
     @GetMapping("/add")
     public ModelAndView adicionar(){
+
         ModelAndView modelAndView = new ModelAndView("usuario-detalhe");
         Usuario usuario = new Usuario();
         modelAndView.addObject("usuario", usuario);
@@ -50,15 +47,16 @@ public class UsuarioController {
 
     @PostMapping("/add")
     public String adicionarUsuario(Usuario usuario){
+
         usuarioRepository.save(usuario);
         return "redirect:/usuarios";
     }
 
     @GetMapping("/deletar/{id}")
     public String deletar(@PathVariable Long id){
+
         Usuario usuario = usuarioRepository.findUsuarioById(id);
         usuarioRepository.delete(usuario);
-
         return "redirect:/usuarios";
     }
 }
