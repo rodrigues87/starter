@@ -44,10 +44,14 @@
                             <div class="basic-form">
                                 <form method="post" th:action="@{/usuarios/add}" th:object="${usuario}">
                                     <div class="form-row">
+                                        <input type="hidden"
+                                               th:field="*{id}"
+                                               th:value="${usuario.id}">
                                         <div class="form-group col-md-4">
                                             <label>Email</label>
                                             <input type="email" class="form-control readonly" placeholder="">
                                         </div>
+
                                         <div class="form-group col-md-6">
                                             <label>Nome</label>
                                             <input type="text"
