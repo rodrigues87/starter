@@ -15,13 +15,23 @@ import java.io.Serializable;
 public class Usuario implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    private String email;
     private String nome;
+    private String telefone;
+    private String telefoneSecundario;
+    private String cep;
+    private String rua;
+    private int numero;
+    private String cidade;
+    private String dataDeNascimento;
+    private String estadoCivil;
+
+
     private int idade;
     private boolean casado;
-    private String email;
 
     public Usuario(String nome, int idade, boolean casado) {
         this.nome = nome;
