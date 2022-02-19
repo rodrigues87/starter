@@ -7580,7 +7580,7 @@ sub {
   left: auto; }
 
 .nav-header {
-  height: 5rem;
+  height: 4rem;
   width: 15.1875rem;
   display: inline-block;
   text-align: left;
@@ -7600,7 +7600,7 @@ sub {
   .nav-header .brand-logo {
     z-index: 999; }
     .nav-header .brand-logo a {
-      padding: 1.607rem 1.8125rem;
+      padding: 0.8rem 1.8125rem;
       display: block; }
       .nav-header .brand-logo a i {
         font-size: 1.375rem; }
@@ -7673,7 +7673,7 @@ sub {
   display: block; }
 
 .header {
-  height: 5rem;
+  height: 4rem;
   z-index: 1;
   position: relative;
   padding: 0 0.9375rem;
@@ -8141,7 +8141,6 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   padding-bottom: 112px;
   height: 100%;
   position: absolute;
-  top: 5rem;
   padding-top: 0;
   z-index: 99;
   background: #fff;
@@ -8290,7 +8289,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   [data-sidebar-style="full"][data-layout="vertical"] .menu-toggle .nav-header .brand-logo {
     z-index: 999; }
     [data-sidebar-style="full"][data-layout="vertical"] .menu-toggle .nav-header .brand-logo a {
-      padding: 1.607rem 1.0625rem;
+      padding: 0.8rem;
       text-align: center; }
       [data-sidebar-style="full"][data-layout="vertical"] .menu-toggle .nav-header .brand-logo a b img {
         margin-top: 0.4375rem; }
@@ -8448,7 +8447,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
     [data-sidebar-style="mini"] .nav-header .brand-logo {
       z-index: 999; }
       [data-sidebar-style="mini"] .nav-header .brand-logo a {
-        padding: 1.607rem 1.0625rem; }
+        padding: 0.8rem }
         [data-sidebar-style="mini"] .nav-header .brand-logo a b img {
           margin-top: 0.4375rem; }
     [data-sidebar-style="mini"] .nav-header .nav-control {

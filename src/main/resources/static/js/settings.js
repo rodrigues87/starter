@@ -4,8 +4,8 @@ const html = $('html');
 function quixSettings({version, layout, navheaderBg, headerBg, sidebarStyle, sidebarBg, sidebarPosition, headerPosition, containerLayout, direction}) {
     this.version = version || "light";
     this.layout = layout || "vertical";
-    this.navheaderBg = navheaderBg || "color_1";
-    this.headerBg = headerBg || "color_1";
+    this.navheaderBg = navheaderBg || "color_6";
+    this.headerBg = headerBg || "color_6";
     this.sidebarStyle = sidebarStyle || "full";
     this.sidebarBg = sidebarBg || "color_1";
     this.sidebarPosition = sidebarPosition || "static";

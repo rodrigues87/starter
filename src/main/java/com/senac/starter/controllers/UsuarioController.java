@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 @RequestMapping("/usuarios")
@@ -20,7 +19,7 @@ public class UsuarioController {
     @GetMapping("")
     public ModelAndView listar(){
 
-        ModelAndView modelAndView = new ModelAndView("usuario");
+        ModelAndView modelAndView = new ModelAndView("usuario/usuarios");
         List<Usuario> usuarios =usuarioRepository.findAll();
         modelAndView.addObject("usuarios", usuarios);
         return modelAndView;
@@ -31,7 +30,7 @@ public class UsuarioController {
     public ModelAndView detalharUsuario(@PathVariable Long id){
 
         Usuario usuario = usuarioRepository.findUsuarioById(id);
-        ModelAndView modelAndView  = new ModelAndView("usuario-detalhe");
+        ModelAndView modelAndView  = new ModelAndView("usuario/usuario-detalhe");
         modelAndView.addObject("usuario",usuario);
         return modelAndView;
     }
@@ -39,7 +38,7 @@ public class UsuarioController {
     @GetMapping("/add")
     public ModelAndView adicionar(){
 
-        ModelAndView modelAndView = new ModelAndView("usuario-detalhe");
+        ModelAndView modelAndView = new ModelAndView("usuario/usuario-detalhe");
         Usuario usuario = new Usuario();
         modelAndView.addObject("usuario", usuario);
         return modelAndView;
