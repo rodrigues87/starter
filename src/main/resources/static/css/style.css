@@ -11048,6 +11048,9 @@ sub {
 .footer {
     padding-left: 15.1875rem;
     background-color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 .footer .copyright {
@@ -11086,7 +11089,7 @@ sub {
     width: 15.1875rem;
     display: inline-block;
     text-align: left;
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     background: #111B27;
@@ -11853,6 +11856,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 .content-body {
     margin-left: 15.1875rem;
     z-index: 0;
+    margin-bottom: 2rem;
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1350px) {
@@ -11865,7 +11869,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
     width: 15.1875rem;
     padding-bottom: 112px;
     height: 100%;
-    position: absolute;
+    position: fixed;
     padding-top: 0;
     z-index: 99;
     background: #fff;
@@ -11875,6 +11879,8 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 @media only screen and (min-width: 1200px) and (max-width: 1350px) {
     .nk-sidebar {
         width: 14.375rem;
+        height: 100%;
+
     }
 }
 

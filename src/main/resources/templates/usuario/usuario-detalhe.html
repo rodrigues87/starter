@@ -88,13 +88,13 @@
 
                                         <div class="form-group col-md-5">
                                             <label>Estado Civil</label>
-                                            <select id="estadoCivil" class="form-control">
-                                                <option selected="selected"
-                                                        th:text="${usuario.estadoCivil}"
-                                                        th:value="${usuario.estadoCivil}">Escolha
+
+                                            <select name="role" class="form-control" th:field="*{estadoCivil}">
+                                                <option th:each="estadoCivil : ${T(com.senac.starter.enums.EstadoCivil).values()}"
+                                                        th:text="${estadoCivil}"
+                                                        th:value="${estadoCivil}">
                                                 </option>
-                                                <option>Casado</option>
-                                                <option>Solteiro</option>
+
                                             </select>
                                         </div>
 
@@ -138,7 +138,19 @@
                                         </div>
                                     </div>
                                     <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label>Estado</label>
 
+                                            <select name="role" class="form-control" th:field="*{estado}">
+                                                <option th:each="estado : ${T(com.senac.starter.enums.Estado).values()}"
+                                                        th:text="${estado.getNome()}"
+                                                        th:value="${estado.getNome()}">
+                                                </option>
+
+                                            </select>
+
+
+                                        </div>
                                     <div class="form-group col-md-6">
                                             <label>Cidade</label>
                                             <input type="text"
@@ -146,15 +158,7 @@
                                                    th:value="${usuario.cidade}"
                                                    th:field="*{cidade}">
                                         </div>
-                                        <div class="form-group col-md-6">
-                                            <label>Estado</label>
-                                            <select id="inputState" class="form-control">
-                                                <option selected="selected">Escolha</option>
-                                                <option>Espirito Santo</option>
-                                                <option>Rio de Janeiro</option>
-                                            </select>
 
-                                        </div>
 
 
                                     </div>

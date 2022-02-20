@@ -1,5 +1,7 @@
 package com.senac.starter.models;
 
+import com.senac.starter.enums.EstadoCivil;
+import com.senac.starter.enums.Estado;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -28,6 +30,7 @@ public class Usuario implements Serializable {
     private String cidade;
     private String dataDeNascimento;
     private String estadoCivil;
+    private String estado;
 
 
     private int idade;
