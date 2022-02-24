@@ -31,7 +31,7 @@ public class Usuario implements Serializable {
     private String dataDeNascimento;
     private String estadoCivil;
     private String estado;
-
+    private String sexo;
 
     private int idade;
     private boolean casado;

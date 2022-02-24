@@ -86,13 +86,25 @@
                                                    th:field="*{telefoneSecundario}">
                                         </div>
 
-                                        <div class="form-group col-md-5">
+                                        <div class="form-group col-md-3">
                                             <label>Estado Civil</label>
 
                                             <select name="role" class="form-control" th:field="*{estadoCivil}">
                                                 <option th:each="estadoCivil : ${T(com.senac.starter.enums.EstadoCivil).values()}"
                                                         th:text="${estadoCivil}"
                                                         th:value="${estadoCivil}">
+                                                </option>
+
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group col-md-2">
+                                            <label>Sexo</label>
+
+                                            <select name="role" class="form-control" th:field="*{sexo}">
+                                                <option th:each="sexo : ${T(com.senac.starter.enums.Sexo).values()}"
+                                                        th:text="${sexo}"
+                                                        th:value="${sexo}">
                                                 </option>
 
                                             </select>
@@ -143,8 +155,8 @@
 
                                             <select name="role" class="form-control" th:field="*{estado}">
                                                 <option th:each="estado : ${T(com.senac.starter.enums.Estado).values()}"
-                                                        th:text="${estado.getNome()}"
-                                                        th:value="${estado.getNome()}">
+                                                        th:text="${estado.getSigla()}"
+                                                        th:value="${estado.getSigla()}">
                                                 </option>
 
                                             </select>
