@@ -1,7 +1,9 @@
 package com.senac.starter.controllers;
 
 import com.senac.starter.models.Animal;
+import com.senac.starter.models.Usuario;
 import com.senac.starter.repositorys.AnimalRepository;
+import com.senac.starter.repositorys.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +21,9 @@ public class AnimalController {
     @Autowired
     AnimalRepository animalRepository;
 
+    @Autowired
+    UsuarioRepository usuarioRepository;
+
     @GetMapping("")
     public ModelAndView listar(){
 
@@ -35,6 +40,10 @@ public class AnimalController {
         Animal animal = animalRepository.findAnimalById(id);
         ModelAndView modelAndView  = new ModelAndView("animal/animal-detalhe");
         modelAndView.addObject("animal",animal);
+
+        List<Usuario> usuarios = usuarioRepository.findAll();
+        modelAndView.addObject("usuarios",usuarios);
+
         return modelAndView;
     }
 
@@ -44,6 +53,9 @@ public class AnimalController {
         ModelAndView modelAndView = new ModelAndView("animal/animal-detalhe");
         Animal animal = new Animal();
         modelAndView.addObject("animal", animal);
+
+        List<Usuario> usuarios = usuarioRepository.findAll();
+        modelAndView.addObject("usuarios",usuarios);
         return modelAndView;
     }
 

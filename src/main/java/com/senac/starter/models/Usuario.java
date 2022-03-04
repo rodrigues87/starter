@@ -5,11 +5,9 @@ import com.senac.starter.enums.Estado;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Data
 @Entity
@@ -32,6 +30,9 @@ public class Usuario implements Serializable {
     private String estadoCivil;
     private String estado;
     private String sexo;
+
+    @OneToMany(mappedBy = "dono", fetch = FetchType.LAZY)
+    private List<Animal> animais;
 
     private int idade;
     private boolean casado;

@@ -1,17 +1,14 @@
 package com.senac.starter.models;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
-@Data
+@Getter
+@Setter
 @Entity
-@NoArgsConstructor
 public class Animal implements Serializable {
 
     @Id
@@ -24,5 +21,8 @@ public class Animal implements Serializable {
     private String especie;
     private String raca;
 
+
+    @ManyToOne()
+    private Usuario dono;
 
 }

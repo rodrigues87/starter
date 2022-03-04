@@ -3,11 +3,9 @@ package com.senac.starter.models;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Data
 @Entity
@@ -21,4 +19,7 @@ public class Venda implements Serializable {
     private double totalVenda;
     private String data;
     private String formaDePagamento;
+
+    @OneToMany(mappedBy = "venda", fetch = FetchType.LAZY)
+    private List<Produto> produtos;
 }

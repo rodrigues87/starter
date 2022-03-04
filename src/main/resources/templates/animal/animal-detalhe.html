@@ -83,6 +83,8 @@
                                             </select>
                                         </div>
                                     </div>
+
+
                                     <div class="row form-material">
 
                                         <div class="form-group col-md-3">
@@ -102,6 +104,19 @@
                                                    th:value="${animal.raca}"
                                                    th:field="*{raca}">
                                         </div>
+
+                                        <div class="form-group col-md-2">
+                                            <label>Dono</label>
+
+                                            <select name="role" class="form-control" th:field="*{dono}">
+                                                <option th:each="usuario : ${usuarios}"
+                                                        th:text="${usuario.getNome()}"
+                                                        th:value="${usuario.getId()}">
+                                                </option>
+
+                                            </select>
+                                        </div>
+
 
                                     </div>
 
