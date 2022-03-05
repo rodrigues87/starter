@@ -1,9 +1,12 @@
 package com.senac.starter.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.senac.starter.enums.EstadoCivil;
 import com.senac.starter.enums.Estado;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -32,6 +35,7 @@ public class Usuario implements Serializable {
     private String sexo;
 
     @OneToMany(mappedBy = "dono", fetch = FetchType.LAZY)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private List<Animal> animais;
 
     private int idade;

@@ -1,5 +1,6 @@
 package com.senac.starter.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,7 +23,8 @@ public class Animal implements Serializable {
     private String raca;
 
 
-    @ManyToOne()
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Usuario dono;
 
 }
