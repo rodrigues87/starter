@@ -1,5 +1,7 @@
 package com.senac.starter.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.senac.starter.enums.EstadoCivil;
 import com.senac.starter.enums.Estado;
@@ -34,7 +36,8 @@ public class Usuario implements Serializable {
     private String estado;
     private String sexo;
 
-    @OneToMany(mappedBy = "dono", fetch = FetchType.LAZY)
+    @JsonManagedReference
+    @OneToMany(mappedBy = "dono")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private List<Animal> animais;
 
