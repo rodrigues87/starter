@@ -1,14 +1,9 @@
 package com.senac.starter.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.senac.starter.enums.EstadoCivil;
-import com.senac.starter.enums.Estado;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -36,8 +31,8 @@ public class Usuario implements Serializable {
     private String estado;
     private String sexo;
 
-    @JsonManagedReference
-    @OneToMany(mappedBy = "dono")
+    @OneToMany(mappedBy = "dono",fetch = FetchType.LAZY)
+    //@JsonManagedReference
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private List<Animal> animais;
 

@@ -27,11 +27,6 @@ class UsuarioRepositoryTest {
     void findUsuarioById() {
 
         Usuario usuario = usuarioRepository.findUsuarioById(1L);
-        List<Animal> animals = usuario.getAnimais();
-
-        for (Animal animal : animals){
-            String nome = animal.getNome();
-        }
 
         System.out.println();
     }

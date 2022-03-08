@@ -1,5 +1,6 @@
 package com.senac.starter.controllers;
 
+import com.senac.starter.models.Animal;
 import com.senac.starter.models.Usuario;
 import com.senac.starter.repositorys.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ public class UsuarioController {
 
         ModelAndView modelAndView = new ModelAndView("usuario/usuarios");
         List<Usuario> usuarios =usuarioRepository.findAll();
+
         modelAndView.addObject("usuarios", usuarios);
         return modelAndView;
 
