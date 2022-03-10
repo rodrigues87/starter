@@ -32,8 +32,8 @@ public class Usuario implements Serializable {
     private String sexo;
 
     @OneToMany(mappedBy = "dono",fetch = FetchType.LAZY)
-    //@JsonManagedReference
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @JsonManagedReference
+    //@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private List<Animal> animais;
 
     private int idade;

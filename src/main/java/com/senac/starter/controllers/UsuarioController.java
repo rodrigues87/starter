@@ -33,6 +33,7 @@ public class UsuarioController {
 
         Usuario usuario = usuarioRepository.findUsuarioById(id);
         ModelAndView modelAndView  = new ModelAndView("usuario/usuario-detalhe");
+
         modelAndView.addObject("usuario",usuario);
         return modelAndView;
     }

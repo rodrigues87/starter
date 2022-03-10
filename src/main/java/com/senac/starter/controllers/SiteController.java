@@ -59,6 +59,7 @@ public class SiteController {
 
         return "filmes";
     }
+
     @GetMapping("/jogos")
     public String jogos(){
         System.out.println("entrou no jogos");

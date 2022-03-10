@@ -26,8 +26,8 @@ public class Animal implements Serializable {
 
 
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    //@JsonBackReference
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @JsonBackReference
+    //@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Usuario dono;
 
 }
