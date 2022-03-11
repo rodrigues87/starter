@@ -1,6 +1,5 @@
 package com.senac.starter.models;
 
-import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import lombok.NoArgsConstructor;
