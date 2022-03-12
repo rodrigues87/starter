@@ -1,6 +1,7 @@
 package com.senac.starter.models;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -31,16 +32,16 @@ public class Usuario implements Serializable {
     private String sexo;
 
     @OneToMany(mappedBy = "dono",fetch = FetchType.LAZY)
-    @JsonManagedReference
-    //@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    //@JsonManagedReference
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private List<Animal> animais;
 
-    private int idade;
-    private boolean casado;
+    @OneToMany(mappedBy = "comprador")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private List<Transacao> transacoes;
 
-    public Usuario(String nome, int idade, boolean casado) {
+
+    public Usuario(String nome) {
         this.nome = nome;
-        this.idade = idade;
-        this.casado = casado;
     }
 }

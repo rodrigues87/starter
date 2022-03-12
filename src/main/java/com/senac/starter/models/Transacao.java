@@ -10,7 +10,7 @@ import java.util.List;
 @Data
 @Entity
 @NoArgsConstructor
-public class Venda implements Serializable {
+public class Transacao implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,6 +20,14 @@ public class Venda implements Serializable {
     private String data;
     private String formaDePagamento;
 
-    @OneToMany(mappedBy = "venda", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "transacao", fetch = FetchType.LAZY)
     private List<Produto> produtos;
+
+    @ManyToOne()
+    private Usuario comprador;
+
+    @ManyToOne()
+    private Usuario vendedor;
+    
+    
 }

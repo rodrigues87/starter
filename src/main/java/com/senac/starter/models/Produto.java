@@ -23,5 +23,5 @@ public class Produto implements Serializable {
     private double precoVenda;
 
     @ManyToOne()
-    private Venda venda;
+    private Transacao transacao;
 }

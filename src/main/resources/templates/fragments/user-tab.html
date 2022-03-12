@@ -3,10 +3,10 @@
         <a href="#navpills-1" class="nav-link active" data-toggle="tab" aria-expanded="false">Animais</a>
     </li>
     <li class="nav-item">
-        <a href="#navpills-2" class="nav-link" data-toggle="tab" aria-expanded="false">Tab Two</a>
+        <a href="#navpills-2" class="nav-link" data-toggle="tab" aria-expanded="false">Compras</a>
     </li>
     <li class="nav-item">
-        <a href="#navpills-3" class="nav-link" data-toggle="tab" aria-expanded="true">Tab Three</a>
+        <a href="#navpills-3" class="nav-link" data-toggle="tab" aria-expanded="true">Permissões</a>
     </li>
 </ul>
 <div class="tab-content br-n pn">
@@ -20,12 +20,9 @@
     </div>
     <div id="navpills-2" class="tab-pane">
         <div class="row align-items-center">
-            <div class="col-sm-6 col-md-4 col-xl-2">
-                <img src="images/big/card-3.png" alt="" class="img-fluid thumbnail m-r-15">
-            </div>
-            <div class="col-sm-6 col-md-8 col-xl-10">
-                <p>Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid.</p>
-                <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica.</p>
+            <div class="col">
+                <div th:replace="/fragments/transacao-list-fragment"></div>
+
             </div>
         </div>
     </div>

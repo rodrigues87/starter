@@ -35,15 +35,15 @@
                                         <span class="card-widget__icon"><i class="icon-emotsmile"></i></span>
                                         <div class="media-body">
                                             <h3 class="text-white">
-                                                <span th:text="${#lists.size(vendas)}"/>
+                                                <span th:text="${#lists.size(transacoes)}"/>
                                                 Vendas Cadastradas
                                             </h3>
                                         </div>
                                         <div class="right">
-                                            <a href="/vendas/add">
+                                            <a href="/transacoes/add">
                                                 <button type="button"  class="btn mb-1 btn-rounded btn-info btn-lg">
                                                     <i class="icon-plus" style="margin-top:10px"></i>
-                                                    Nova Venda
+                                                    Nova Transacao
                                                 </button>
                                             </a>
 
@@ -63,18 +63,18 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr th:each="venda : ${vendas}">
-                                        <th scope="row" th:text="${venda.id}"></th>
+                                    <tr th:each="transacao : ${transacoes}">
+                                        <th scope="row" th:text="${transacao.id}"></th>
                                         <td>
-                                            <a th:href="@{'/vendas/' + ${venda.id}}" th:text="${venda.data}"></a>
+                                            <a th:href="@{'/transacoes/' + ${transacao.id}}" th:text="${transacao.data}"></a>
 
                                         </td>
 
-                                        <td th:text="${venda.formaDePagamento}"></td>
-                                        <td th:text="${venda.totalVenda}"></td>
+                                        <td th:text="${transacao.formaDePagamento}"></td>
+                                        <td th:text="${transacao.totalVenda}"></td>
 
                                         <td>
-                                            <a th:href="@{'/vendas/deletar/' + ${venda.id}}">
+                                            <a th:href="@{'/transacoes/deletar/' + ${transacao.id}}">
                                                 <i class="icon-trash" ></i>
                                             </a>
 

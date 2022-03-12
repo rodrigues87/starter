@@ -1,6 +1,6 @@
 package com.senac.starter.controllers;
 
-import com.senac.starter.models.Venda;
+import com.senac.starter.models.Transacao;
 import com.senac.starter.repositorys.VendaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 @Controller
-@RequestMapping("/vendas")
+@RequestMapping("/transacoes")
 public class VendaController {
 
     @Autowired
@@ -22,43 +22,43 @@ public class VendaController {
     @GetMapping("")
     public ModelAndView listar(){
 
-        ModelAndView modelAndView = new ModelAndView("venda/vendas");
-        List<Venda> vendas =vendaRepository.findAll();
-        modelAndView.addObject("vendas", vendas);
+        ModelAndView modelAndView = new ModelAndView("transacao/transacoes");
+        List<Transacao> transacoes =vendaRepository.findAll();
+        modelAndView.addObject("transacoes", transacoes);
         return modelAndView;
 
     }
 
     @GetMapping("/{id}")
-    public ModelAndView detalharVenda(@PathVariable Long id){
+    public ModelAndView detalharTransacao(@PathVariable Long id){
 
-        Venda venda = vendaRepository.findVendaById(id);
-        ModelAndView modelAndView  = new ModelAndView("venda/venda-detalhe");
-        modelAndView.addObject("venda",venda);
+        Transacao transacao = vendaRepository.findVendaById(id);
+        ModelAndView modelAndView  = new ModelAndView("transacao/transacao-detalhe");
+        modelAndView.addObject("transacao",transacao);
         return modelAndView;
     }
 
     @GetMapping("/add")
     public ModelAndView adicionar(){
 
-        ModelAndView modelAndView = new ModelAndView("venda/venda-detalhe");
-        Venda venda = new Venda();
-        modelAndView.addObject("venda", venda);
+        ModelAndView modelAndView = new ModelAndView("transacao/transacao-detalhe");
+        Transacao transacao = new Transacao();
+        modelAndView.addObject("transacao", transacao);
         return modelAndView;
     }
 
     @PostMapping("/add")
-    public String adicionarVenda(Venda venda){
+    public String adicionarVenda(Transacao transacao){
 
-        vendaRepository.save(venda);
-        return "redirect:/vendas";
+        vendaRepository.save(transacao);
+        return "redirect:/transacoes";
     }
 
     @GetMapping("/deletar/{id}")
     public String deletar(@PathVariable Long id){
 
-        Venda venda = vendaRepository.findVendaById(id);
-        vendaRepository.delete(venda);
-        return "redirect:/vendas";
+        Transacao transacao = vendaRepository.findVendaById(id);
+        vendaRepository.delete(transacao);
+        return "redirect:/transacoes";
     }
 }

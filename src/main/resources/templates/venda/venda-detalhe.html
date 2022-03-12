@@ -43,18 +43,18 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="basic-form">
-                                <form method="post" th:action="@{/vendas/add}" th:object="${venda}">
+                                <form method="post" th:action="@{/transacoes/add}" th:object="${transacao}">
                                     <div class="form-row">
                                         <input type="hidden"
                                                th:field="*{id}"
-                                               th:value="${venda.id}">
+                                               th:value="${transacao.id}">
                                         <div class="form-group col-md-4">
-                                            <label>Total da Venda</label>
+                                            <label>Total da Transacao</label>
                                             <input type="number"
                                                    class="form-control readonly"
                                                    placeholder=""
                                                    step="0.01"
-                                                   th:value="${venda.totalVenda}"
+                                                   th:value="${transacao.totalVenda}"
                                                    th:field="*{totalVenda}">
                                         </div>
 
@@ -64,7 +64,7 @@
                                                    class="form-control
                                                        mydatepicker"
                                                    placeholder="mm/dd/yyyy"
-                                                   th:value="${venda.data}"
+                                                   th:value="${transacao.data}"
                                                    th:field="*{data}">
                                         </div>
                                         <div class="form-group col-md-2">
@@ -72,13 +72,13 @@
                                             <input type="text"
                                                    class="form-control"
                                                    placeholder=""
-                                                   th:value="${venda.formaDePagamento}"
+                                                   th:value="${transacao.formaDePagamento}"
                                                    th:field="*{formaDePagamento}">
                                         </div>
                                     </div>
 
                                     <div class="text-right">
-                                        <a href="/vendas">
+                                        <a href="/transacoes">
                                             <input type="button" class="btn btn-info" value="Voltar">
                                         </a>
                                         <button type="submit" class="btn btn-info">Salvar</button>

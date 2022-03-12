@@ -1,0 +1,37 @@
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Data de Nascimento</th>
+            <th scope="col">Sexo</th>
+            <th scope="col">Espécie</th>
+            <th scope="col">Raça</th>
+            <th scope="col">Deletar</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="transacao : ${transacoes}">
+            <th scope="row" th:text="${transacao.id}"></th>
+            <td>
+                <a th:href="@{'/transacoes/' + ${transacao.id}}" th:text="${transacao.nome}"></a>
+
+            </td>
+
+            <td th:text="${transacao.dataDeNascimento}"></td>
+            <td th:text="${transacao.sexo}"></td>
+            <td th:text="${transacao.especie}"></td>
+            <td th:text="${transacao.raca}"></td>
+
+            <td>
+                <a th:href="@{'/transacoes/deletar/' + ${transacao.id}}">
+                    <i class="icon-trash" ></i>
+                </a>
+
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
