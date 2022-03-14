@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -43,7 +44,12 @@ public class UsuarioController {
 
         ModelAndView modelAndView = new ModelAndView("usuario/usuario-detalhe");
         Usuario usuario = new Usuario();
-        modelAndView.addObject("usuario", usuario);
+        List<Animal> animais = new ArrayList<>();
+        modelAndView.addObject("usuario",usuario);
+
+        modelAndView.addObject("animais",animais);
+
+
         return modelAndView;
     }
 
