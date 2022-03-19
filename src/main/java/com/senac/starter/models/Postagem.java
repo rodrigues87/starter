@@ -12,10 +12,9 @@ import java.util.Set;
 @Setter
 @Entity
 @NoArgsConstructor
-public class Permissao extends AbstractEntity  {
+public class Postagem extends AbstractEntity  {
 
     private String nome;
+    private String descricao;
 
-    @ManyToMany
-    private Set<Usuario> usuarios;
 }

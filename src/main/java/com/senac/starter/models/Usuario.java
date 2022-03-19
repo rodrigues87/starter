@@ -10,6 +10,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -38,6 +39,11 @@ public class Usuario extends AbstractEntity  {
     @OneToMany(mappedBy = "comprador")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private List<Transacao> transacoes;
+
+
+    @ManyToMany(mappedBy = "usuarios")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private Set<Permissao> permissoes;
 
 
     public Usuario(String nome) {

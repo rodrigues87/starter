@@ -1,6 +1,5 @@
 package com.senac.starter.repositorys;
 
-import com.senac.starter.models.Animal;
 import com.senac.starter.models.Usuario;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -12,9 +11,6 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Optional;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
 @DataJpaTest
@@ -46,6 +42,8 @@ class UsuarioRepositoryTest {
 
         for (Usuario usuario : usuarios) {
             String key  = usuario.getCep();
+
+
             if(map.containsKey(key)){
                 List<Usuario> list = map.get(key);
                 list.add(usuario);
